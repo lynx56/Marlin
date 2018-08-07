@@ -41,11 +41,13 @@ echo	4- Hephestos XL
 echo	5- Hephestos ZUM
 echo	6- Hephestos ZUM XL
 echo	7- Hephestos 2
+echo	8- Hephestos ZUM heated bed
 echo.
 echo	Q- Exit updater
 echo.
-choice /c:1234567Q>nul
-if errorlevel 8 goto quit
+choice /c:12345678Q>nul
+if errorlevel 9 goto quit
+if errorlevel 8 goto hepzhb
 if errorlevel 7 goto hep2
 if errorlevel 6 goto hepzxl
 if errorlevel 5 goto hepz
@@ -113,6 +115,10 @@ goto language_en
 
 :wit
 SET TARGET=witbox
+goto menu_language
+
+:hepzhb
+SET TARGET=hephestos_zum_heated_bed
 goto menu_language
 
 :: Language targets
